@@ -40,6 +40,8 @@ paths:
                   type: string
                 userID:
                   type: string
+                name:
+                  type: string
       responses:
         '201':
           description: конверт добавлен
@@ -72,6 +74,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Envelope'
+        '404':
+          description: Not Found
       tags:
         - envelope
     put:
@@ -81,6 +85,11 @@ paths:
           application/json:
             schema:
               type: object
+              required:
+                - budget
+                - categoryID
+                - userID
+                - name
               properties:
                 budget:
                   type: number
@@ -89,6 +98,11 @@ paths:
                   type: string
                 userID:
                   type: string
+                name:
+                  type: string
+                changeBudget:
+                  type: number
+                  format: double
       responses:
         '200':
           description: конкретный конверт по ID
@@ -200,6 +214,9 @@ components:
           description: id пользователя которому пренадлежит данный конверт
           type: string
           format: UUID
+        name:
+          description: название или коротка заметка о конверте
+          type: string
     User:
       type: object
       required:

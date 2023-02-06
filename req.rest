@@ -1,0 +1,30 @@
+GET http://localhost:3000/api/v1/envelopes
+
+###
+POST http://localhost:3000/api/v1/envelopes
+Content-Type: application/json
+
+{
+  "budget": 3000,
+  "categoryID": 4,
+  "userID": 2,
+  "name": "asdf"
+}
+
+### 
+GET http://localhost:3000/api/v1/envelopes/408dca7
+
+###
+PUT http://localhost:3000/api/v1/envelopes/408dca7
+Content-Type: application/json
+
+{ 
+  "id": "408dca7",
+  "categoryID": 4,
+  "userID": 2,
+  "userID": 1,
+  "name": "оплата телефона",
+  "changeBudget": 800
+}
+###
+DELETE http://localhost:3000/api/v1/envelopes/408dca7
