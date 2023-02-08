@@ -1,6 +1,8 @@
 const express = require('express');
 const morgan = require('morgan');
 const envelopes = require('./routes/api/envelopes.js');
+const users = require('./routes/api/users.js');
+const categories = require('./routes/api/categories.js');
 require('dotenv').config();
 
 const app = express();
@@ -13,6 +15,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended:true }));
 
 app.use('/api/v1/envelopes', envelopes);
+app.use('/api/v1/users', users);
+app.use('/api/v1/categories', categories);
 
 
 app.listen(PORT, () => {

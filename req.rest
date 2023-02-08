@@ -28,3 +28,12 @@ Content-Type: application/json
 }
 ###
 DELETE http://localhost:3000/api/v1/envelopes/408dca7
+
+###Тестирование пользователя
+GET http://localhost:3000/api/v1/users/1
+
+###Получение списка категорий
+GET http://localhost:3000/api/v1/categories
+
+###Получение категории по id
+GET http://localhost:3000/api/v1/categories/2
