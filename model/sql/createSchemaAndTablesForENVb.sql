@@ -25,6 +25,7 @@ CREATE TABLE envelopes (
 );
 ALTER TABLE envelopes
 ADD CONSTRAINT envelopes_category_id_fkey FOREIGN KEY (category_ID) REFERENCES categories(id);
+INSERT INTO users VALUES ('asdf2', 1000.12, 'mail@mail.com', 'sadfasdfsadf', 'Ilchenko');
 
 REVOKE CREATE ON SCHEMA public FROM PUBLIC;
 REVOKE ALL ON DATABASE envb FROM PUBLIC;
