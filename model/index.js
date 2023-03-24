@@ -5,4 +5,7 @@ const envbDBClient = new Client(config);
 const Pool = require('pg').Pool;
 const envbDBPool = new Pool(config);
 
-module.exports = { envbDBClient, envbDBPool };
+module.exports = {
+  envbDBClient,
+  db: (query, params) => envbDBPool.query(query, params),
+};
